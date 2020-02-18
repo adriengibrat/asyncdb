@@ -1,0 +1,27 @@
+<input type="file" />
+
+<audio controls></audio>
+
+<script src="./main.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.3/jsmediatags.js"></script>
+
+<script>
+  document.querySelector("input[type=file]").addEventListener(
+    "change",
+    event => {
+      new Promise((onSuccess, onError) =>
+        new jsmediatags.Reader(event.target.files[0]).read({ onSuccess, onError })
+      ).then(console.log);
+    },
+    false
+  );
+</script>
+
+<!--
+	https://wavesurfer-js.org/
+	https://github.com/aadsm/jsmediatags
+	https://egoroof.ru/browser-id3-writer/stream.html
+	https://js-audio-converter.com/
+	http://billythehtmlblob.appspot.com/html-audio-element-and-filereader-a-simple-mediaplayer.html
+-->

@@ -1,0 +1,30 @@
+{
+  "name": "async-idb",
+  "version": "0.0.1",
+  "description": "ES1019 async indexedDB",
+  "scripts": {
+    "start": "parcel demo/index.html --out-dir .serve --out-file index.html",
+    "build": "rollup -c && node --experimental-modules script/size-report.mjs",
+    "prettier": "prettier --write --print-width 100 'src/**/*' 'demo/*'"
+  },
+  "author": "Adrien Gibrat <adrien.gibrat@gmail.com>",
+  "license": "WTFPL",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-async-generator-functions": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "del": "^5.1.0",
+    "filesize": "^6.0.1",
+    "glob": "^7.1.6",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "rollup": "^1.29.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-terser": "^5.1.3"
+  },
+  "optionalDependencies": {
+    "core-js": "^3.6.4",
+    "ix": "^3.0.1",
+    "regenerator-runtime": "^0.13.3"
+  }
+}
