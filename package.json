@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel demo/index.html --out-dir .serve --out-file index.html",
     "build": "rollup -c && node --experimental-modules script/size-report.mjs",
-    "prettier": "prettier --write --print-width 100 'src/**/*' 'demo/*'"
+    "postbuild": "tsc --declaration --emitDeclarationOnly --outFile dist/esm.d.ts src/asyncdb.ts",
+    "prettier": "prettier --write --print-width 100 'src/**/*' 'demo/*' rollup.config.js package.json README.md"
   },
   "author": "Adrien Gibrat <adrien.gibrat@gmail.com>",
   "license": "WTFPL",
@@ -13,6 +14,7 @@
     "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-async-generator-functions": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
     "del": "^5.1.0",
     "filesize": "^6.0.1",
     "glob": "^7.1.6",
@@ -20,7 +22,9 @@
     "prettier": "^1.19.1",
     "rollup": "^1.29.0",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-terser": "^5.1.3"
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.3",
+    "typescript": "^3.8.2"
   },
   "optionalDependencies": {
     "core-js": "^3.6.4",

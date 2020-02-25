@@ -1,7 +1,12 @@
 import { wrap } from "./utils/wrap";
 import { wrapRequest } from "./request";
 
-export const wrapCursor = cursor =>
+interface WrapCursor {
+  (cursor: IDBCursor): any;
+  (cursor: IDBCursorWithValue): any;
+}
+
+export const wrapCursor: WrapCursor = (cursor: IDBCursor) =>
   cursor && {
     ...wrap(cursor, [
       "direction",
