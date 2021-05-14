@@ -1,7 +1,7 @@
 import { youtubeVideoInfo, youtubeAudioStreams } from "./youtube";
 import "regenerator-runtime/runtime";
 import "core-js/proposals/iterator-helpers";
-import * as asyncdb from "../src/index";
+import * as asyncdb from "../src/asyncdb";
 
 window.asyncdb = asyncdb;
 
