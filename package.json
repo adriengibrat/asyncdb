@@ -2,6 +2,8 @@
   "name": "async-idb",
   "version": "0.0.1",
   "description": "ES1019 async indexedDB",
+  "module": "dist/esm.js",
+  "types": "dist/esm.d.ts",
   "scripts": {
     "start": "parcel demo/index.html --out-dir .serve --out-file index.html",
     "build": "rollup -c && node --experimental-modules script/size-report.mjs",
